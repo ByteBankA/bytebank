@@ -2,6 +2,7 @@
 {
     public class ContaCorrente
     {
+        public Cliente? Titular { get; set; }
         public string? Conta { get; set; }
         public int? NumeroDaAgencia { get; set; }
         public string? NomeDaAgencia { get; set; }
