@@ -6,7 +6,7 @@
         public string? Conta { get; set; }
         public int? NumeroDaAgencia { get; set; }
         public string? NomeDaAgencia { get; set; }
-        public double? Saldo { get; set; }
+        private double saldo { get; set; }
         public bool? Sacar(double valor)
         {
             if (Saldo < valor)
@@ -42,6 +42,23 @@
                 Saldo = Saldo - valor;
                 destino.Saldo = destino.Saldo + valor;
                 return true;
+            }
+        }
+
+        public double Saldo
+        {
+            get
+            {
+                return saldo;
+            }
+
+            set
+            {
+                if (value < 0)
+                {
+                    return;
+                }
+                saldo = value;
             }
         }
     }

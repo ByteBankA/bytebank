@@ -7,23 +7,11 @@ Console.WriteLine("Boas Vindas ao seu banco, ByteBank!");
 //cliente.Cpf = "098-097-096-01";
 //cliente.Profissao = "Programador";
 
-ContaCorrente conta3 = new ContaCorrente();
-conta3.Titular = new Cliente();
-conta3.Titular.Nome = "Leonardo";
-conta3.Titular.Cpf = "098-097-096-01";
-conta3.Titular.Profissao = "Programador";
-conta3.Conta = "9998887-x";
-conta3.NumeroDaAgencia = 35;
-conta3.NomeDaAgencia = "Agência Central";
+ContaCorrente conta = new ContaCorrente();
+Cliente Lola = new Cliente();
+conta.Saldo = 150;
+Console.WriteLine("Saldo = " + conta.Saldo);
 
-if (conta3.Titular == null)
-{
-    Console.WriteLine("O campo tá nulo, não tá vendo?");
-}
-else
-{
-    Console.WriteLine(conta3.Titular.Nome);
-}
 
 
 
