@@ -2,14 +2,13 @@
 {
     public class ContaCorrente
     {
-        public string titular;
-        public string conta;
-        public int numeroAgencia;
-        public string nomeAgencia;
-        public double saldo;
-        public bool Sacar(double valor)
+        public string? Conta { get; set; }
+        public int? NumeroDaAgencia { get; set; }
+        public string? NomeDaAgencia { get; set; }
+        public double? Saldo { get; set; }
+        public bool? Sacar(double valor)
         {
-            if (saldo < valor)
+            if (Saldo < valor)
             {
                 return false;
             }
@@ -19,17 +18,17 @@
             }
             else
             {
-                saldo -= valor;
+                Saldo -= valor;
                 return true;
             }
         }
         public void Depositar(double valor)
         {
-            saldo += valor;
+            Saldo += valor;
         }
         public bool Transferir(double valor, ContaCorrente destino)
         {
-            if (saldo < valor)
+            if (Saldo < valor)
             {
                 return false;
             }
@@ -39,8 +38,8 @@
             }
             else
             {
-                saldo = saldo - valor;
-                destino.saldo = destino.saldo + valor;
+                Saldo = Saldo - valor;
+                destino.Saldo = destino.Saldo + valor;
                 return true;
             }
         }
