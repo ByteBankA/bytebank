@@ -3,11 +3,66 @@
     public class ContaCorrente
     {
         public Cliente? Titular { get; set; }
-        public string? Conta { get; set; }
-        public int? NumeroDaAgencia { get; set; }
-        public string? NomeDaAgencia { get; set; }
+        private string? _conta;
+        public string Conta
+        {
+            get
+            {
+                return _conta;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    return;
+                }
+                else
+                {
+                    _conta = value;
+                }
+            }
+        }
+
+        private int _numero_da_agencia;
+        public int NumeroDaAgencia
+        {
+            get
+            {
+                return _numero_da_agencia;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+
+                }
+                else
+                {
+                    _numero_da_agencia = value;
+                }
+            }
+        }
+        private string _nome_da_agencia;
+        public string NomeDaAgencia
+        {
+            get
+            {
+                return _nome_da_agencia;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    return;
+                }
+                else
+                {
+                    _nome_da_agencia = value;
+                }
+            }
+        }
         private double saldo { get; set; }
-        public bool? Sacar(double valor)
+        public bool Sacar(double valor)
         {
             if (Saldo < valor)
             {
@@ -60,6 +115,12 @@
                 }
                 saldo = value;
             }
+        }
+
+        public ContaCorrente(string conta, int numeroDaAgencia)
+        {
+            Conta = conta;
+            NumeroDaAgencia = numeroDaAgencia;
         }
     }
 }
