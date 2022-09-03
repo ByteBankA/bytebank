@@ -121,6 +121,9 @@
         {
             Conta = conta;
             NumeroDaAgencia = numeroDaAgencia;
+            TotalDeContasCriadas += 1;
         }
+
+        public static int TotalDeContasCriadas { get; set; }
     }
 }
