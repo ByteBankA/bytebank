@@ -125,16 +125,5 @@
         }
 
         public static int TotalDeContasCriadas { get; set; }
-
-        public ContaCorrente(Cliente? titular, string? conta, int numero_da_agencia, int numeroDaAgencia, string nome_da_agencia, string nomeDaAgencia, double saldo)
-        {
-            Titular = titular;
-            Conta = conta;
-            _numero_da_agencia = numero_da_agencia;
-            NumeroDaAgencia = numeroDaAgencia;
-            _nome_da_agencia = nome_da_agencia;
-            NomeDaAgencia = nomeDaAgencia;
-            Saldo = saldo;
-        }
     }
 }
