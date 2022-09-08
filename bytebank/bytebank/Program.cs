@@ -1,10 +1,17 @@
-﻿using ByteBank;
+﻿using bytebank;
+using ByteBank;
 
 Console.WriteLine("Boas Vindas ao seu banco, ByteBank!");
 {
     try
     {
-        ContaCorrente contaCorrente = new ContaCorrente(0, 0);
+        ContaCorrente contaCorrente = new ContaCorrente(5025, 52665);
+        contaCorrente.Depositar(50);
+        Console.WriteLine(contaCorrente.Saldo);
+        contaCorrente.Sacar(200);
+        Console.WriteLine(contaCorrente.Saldo);
+
+
     }
     catch (ArgumentException ex)
     {
@@ -13,7 +20,9 @@ Console.WriteLine("Boas Vindas ao seu banco, ByteBank!");
         Console.WriteLine(ex.Message);
 
     }
-
-
-
+    catch (SaldoInsuficienteException ex)
+    {
+        Console.WriteLine(ex.Message);
+        Console.WriteLine("Exceção do tipo SaldoInsuficenteException");
+    }
 }
