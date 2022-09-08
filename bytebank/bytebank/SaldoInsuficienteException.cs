@@ -4,7 +4,6 @@
     {
         public SaldoInsuficienteException(string? message) : base(message)
         {
-
         }
     }
 }
