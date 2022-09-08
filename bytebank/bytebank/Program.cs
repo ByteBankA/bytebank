@@ -5,7 +5,7 @@ Console.WriteLine("Boas Vindas ao seu banco, ByteBank!");
 {
     try
     {
-        ContaCorrente contaCorrente = new ContaCorrente(5025, 52665);
+        ContaCorrente contaCorrente = new ContaCorrente(0, 52665);
         contaCorrente.Depositar(50);
         Console.WriteLine(contaCorrente.Saldo);
         contaCorrente.Sacar(200);
@@ -17,6 +17,7 @@ Console.WriteLine("Boas Vindas ao seu banco, ByteBank!");
     {
         Console.WriteLine("Erro no parâmetro " + ex.ParamName);
         Console.WriteLine("Ocorreu um erro do tipo Argument Exception");
+        Console.WriteLine(ex.StackTrace);
         Console.WriteLine(ex.Message);
 
     }
